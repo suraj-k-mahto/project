@@ -1,0 +1,32 @@
+.image-layout{
+    width:100%
+}
+.unstoppable_text{
+    position: absolute;
+    top: 25%;
+    left: 4.5%;
+    /* font-weight:bold; */
+    color:#6883eb;
+
+
+    /* font-size: 44px;
+    font-weight: 700; */
+}
+.build_text{
+    position: absolute;
+    top: 31%;
+    left: 4.5%;
+    /* font-weight:bold; */
+    /* color:#6883eb; */
+    color:smokewhite;
+}
+.join_text{
+    position: absolute;
+    top: 35%;
+    left: 4.5%;
+}
+.text-image{
+    position: relative;
+    text-align: center;
+    color: white;
+}

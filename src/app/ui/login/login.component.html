@@ -1,0 +1,58 @@
+<div class="container-fluid text-image" style="padding-right:0px;padding-left:0px">
+  <img class="image-layout" src="../../../assets/fabian-grohs.jpg" alt="edu image">
+  <div class="unstoppable_text">
+    <div class="d-flex justify-content-center h-100">
+      <div class="card h-100">
+        <div class="card-header">
+          <h3>Login Form</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="loginForm">
+            <div class="form-group" [ngClass]="{'has-error':((loginForm.get('username').touched || loginForm.get('username').dirty) && loginForm.get('username').errors)}">
+              <label for="username" class="labelColor">UserName</label>
+              <input type="email" class="form-control" id="username" formControlName="username" placeholder="Enter email">
+              <span class="help-block" *ngIf="((loginForm.get('username').touched || loginForm.get('username').dirty) && loginForm.get('username').errors)">
+                <span *ngIf="loginForm.get('username').errors.required">
+                  <font size="2" color="red" float:left>UserName is required</font>
+                </span>
+                <span *ngIf="loginForm.get('username').errors.minlength">
+                  <font size="2" color="red">UserName must be greater than 2 characters</font>
+                </span>
+                <span *ngIf="loginForm.get('username').errors.maxlength">
+                  <font size="2" color="red">UserName must be less than 20 characters</font>
+                </span>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="password" class="labelColor">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+              <span *ngIf="((loginForm.get('password').touched || loginForm.get('password').dirty) && loginForm.get('password').errors)">
+                <span *ngIf="loginForm.get('password').errors.required">
+                  <font size="2" color="red"> password is required</font>
+                </span>
+                <span *ngIf="loginForm.get('password').errors.minlength">
+                  <font size="2" color="red">password must be greater than 8 characters</font>
+                </span>
+              </span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit" (click)="login()">Login</button>
+            <br><br>
+            <h5>OR</h5>
+            <div class="row" style="margin-left:-25px;margin-right:0px;">
+              <div class="col-md-6 col-sm-6">
+                <button class="btn btn-danger">
+                  <i class="fa fa-google-plus" aria-hidden="true"></i>&nbsp; Login with Google
+                </button>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <button class="btn btn-info">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>&nbsp; Login with Linkeldn
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ngx-ui-loader></ngx-ui-loader>

@@ -1,0 +1,58 @@
+<div class="container-fluid text-image" style="padding-right:0px;padding-left:0px">
+  <img class="image-layout" src="../../../assets/fabian-grohs.jpg" alt="edu image">
+  <div class="unstoppable_text">
+    <div class="d-flex justify-content-center h-100">
+      <div class="card h-100">
+        <div class="card-header">
+          <h3> Create an Account</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="signUpForm">
+            <div class="form-group">
+              <label for="username" class="labelColor">UserName</label>
+              <input type="email" class="form-control" formControlName="username" placeholder="example@example.com">
+              <span *ngIf="((signUpForm.get('username').touched || signUpForm.get('username').dirty) && signUpForm.get('username').errors)">
+                <span *ngIf="signUpForm.get('username').errors.required">
+                  <font size="2" color="red">UserName is required</font>
+                </span>
+                <span *ngIf="signUpForm.get('username').errors.minlength">
+                  <font size="2" color="red">UserName must be greater than 4 characters</font>
+                </span>
+                <span *ngIf="signUpForm.get('username').errors.maxlength">
+                  <font size="2" color="red">UserName must be less than 20 characters</font>
+                </span>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="password" class="labelColor">Password</label>
+              <input type='password' class="form-control" formControlName="password" placeholder="Password">
+              <span *ngIf="((signUpForm.get('password').touched || signUpForm.get('password').dirty) && signUpForm.get('password').errors)">
+                <span *ngIf="signUpForm.get('password').errors.required">
+                  <font size="2" color="red">Password is required</font>
+                </span>
+                <span *ngIf="signUpForm.get('password').errors.minlength">
+                  <font size="2" color='red'>password must be greater than 8 characters</font>
+                </span>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword" class="labelColor">Confirm Password</label>
+              <input type="password" class="form-control" formControlName="confirmPassword" placeholder="password">
+              <span *ngIf="((signUpForm.get('confirmPassword').touched || signUpForm.get('confirmPassword').dirty) && signUpForm.get('confirmPassword').errors)">
+                <span *ngIf="signUpForm.get('confirmPassword').errors.required">
+                  <font size="2" color="red">confirm Password is required</font>
+                </span>
+              </span>
+              <span *ngIf="isConfirmPassword">
+                <font size="2" color="red">password is not matched</font>
+              </span>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary btn-submit" (click)="signup()">SignUp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+.image-layout{
+    width:100%
+}
+.unstoppable_text{
+    position: absolute;
+    top: 25%;
+    left: 4.5%;
+    /* font-weight:bold; */
+    color:#6883eb;
+
+
+    /* font-size: 44px;
+    font-weight: 700; */
+}
+.build_text{
+    position: absolute;
+    top: 31%;
+    left: 4.5%;
+    /* font-weight:bold; */
+    /* color:#6883eb; */
+    color:smokewhite;
+}
+.join_text{
+    position: absolute;
+    top: 35%;
+    left: 4.5%;
+}
+.text-image{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+
+
+
+.column {
+    float: left;
+    width: 24%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+    padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+.column:hover{
+    /* background-color: rgb(85, 85, 85);  */
+    box-shadow: 20px 20px 50px rgb(228, 225, 225);
+}
